@@ -43,7 +43,7 @@ RUN rm -rf get-pip.py
 RUN python2 -m pip install --upgrade pip setuptools
 RUN python3 -m pip install --upgrade pip setuptools
 
-## Tools for CTF
+## Tools for Pwn
 RUN python2 -m pip install --upgrade pwntools ropgadget
 RUN python3 -m pip install --upgrade pwntools
 
