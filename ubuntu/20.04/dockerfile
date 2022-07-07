@@ -44,8 +44,8 @@ RUN python2 -m pip install --upgrade pip setuptools
 RUN python3 -m pip install --upgrade pip setuptools
 
 ## Tools for Pwn
-RUN python2 -m pip install --upgrade pwntools ropgadget
-RUN python3 -m pip install --upgrade pwntools
+RUN python2 -m pip install --upgrade pwntools ropgadget 
+RUN python3 -m pip install --upgrade pwntools pycrypto pycryptodome gmpy2
 
 RUN gem install one_gadget
 
@@ -56,6 +56,8 @@ RUN echo "source ~/peda/peda.py" >> ~/.gdbinit
 RUN git clone https://github.com/scwuaptx/Pwngdb.git
 RUN cp ~/Pwngdb/.gdbinit ~/
 
+RUN git clone https://github.com/zweisamkeit/RSHack.git
+RUN ln -s /root/RSHack/rshack.py /usr/bin/rshack
 
 RUN mkdir workspace
 WORKDIR /root/workspace/
